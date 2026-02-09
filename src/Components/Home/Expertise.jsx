@@ -137,7 +137,7 @@ function Expertise() {
   }, [setIsDarkMode]);
 
   return (
-    <section ref={sectionRef} className="py-[80px] md:py-[120px] lg:py-[156px] bg-red bg-transparent relative overflow-hidden transition-colors duration-700">
+    <section ref={sectionRef} className="py-[80px] md:py-[120px] lg:py-[156px] bg-transparent relative overflow-hidden transition-colors duration-700">
       {/* Background elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />

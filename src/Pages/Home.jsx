@@ -1,4 +1,4 @@
-import {   HeroSection,Expertise, ExperienceSection,TestimonialsOverview, AIAgent, Steps, Integration, FAQ } from "../Components";
+import {   HeroSection,Expertise, CaseStudies, ExperienceSection,TestimonialsOverview, AIAgent, Steps, Integration, FAQ, CTA } from "../Components";
 import React from 'react'
 
 function Home() {
@@ -8,8 +8,10 @@ function Home() {
         <Steps />
         <AIAgent />
         <ExperienceSection />
+          <CaseStudies />
         <Integration />
         <Expertise />
+        <CTA />
         <TestimonialsOverview />
         <FAQ />
     </div>

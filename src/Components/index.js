@@ -7,6 +7,8 @@ import Integration from "./Home/Integration";
 import ExperienceSection from "./Home/ExperienceSection";
 import Expertise from "./Home/Expertise";
 import FAQ from "./Home/FAQ";
+import CTA from "./Home/CTA";
+import CaseStudies from "./Home/CaseStudies";
 export {
     HeroSection,
     TestimonialsOverview,
@@ -16,6 +18,7 @@ export {
     Integration,
     ExperienceSection,
     Expertise,
-    FAQ
-    }
-    
+    FAQ,
+    CTA,
+    CaseStudies,
+}
