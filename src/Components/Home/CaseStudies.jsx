@@ -191,20 +191,20 @@ function CaseStudies() {
 
   return (
     <RevealAnimation>
-      <section className="relative min-h-[100vh] overflow-hidden">
-        <div className="main-container relative min-h-screen py-16 px-6 md:px-20 lg:py-20">
-        <div className="relative min-h-[640px]">
+      <section className="relative min-h-screen md:min-h-[120vh] lg:min-h-[130vh] xl:min-h-[100vh] overflow-hidden">
+        <div className="main-container relative min-h-screen md:min-h-[120vh] lg:min-h-[130vh] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-20 lg:py-20">
+        <div className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[640px] lg:min-h-[640px]">
           {/* Image Section */}
           <div
             ref={imageContainerRef}
-            className="absolute w-[27rem] h-[17rem] lg:max-w-xl"
+            className="absolute w-[18rem] h-[11rem] sm:w-[22rem] sm:h-[14rem] md:w-[27rem] md:h-[17rem] lg:max-w-xl"
             style={{ left: 0, top: 0 }}
           >
             <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
               <img
                 src={activeStudy.image}
                 alt={activeStudy.title}
-                className={`h-[14rem] w-full object-cover md:h-[14rem] transition-opacity duration-500 ${
+                className={`h-[10rem] sm:h-[12rem] md:h-[14rem] w-full object-cover transition-opacity duration-500 ${
                   isImageReady ? 'opacity-100' : 'opacity-0'
                 }`}
                 loading="eager"
@@ -224,17 +224,17 @@ function CaseStudies() {
           {/* Titles Section */}
           <div
             ref={titlesContainerRef}
-            className="absolute mt-10 w-full lg:max-w-md"
+            className="absolute mt-6 sm:mt-8 md:mt-10 w-full sm:max-w-sm md:max-w-md lg:max-w-md"
             style={{ right: 0, bottom: 0, textAlign: 'right' }}
           >
             {!isExpanded && (
-              <div className="flex items-center justify-end gap-4 text-xs uppercase tracking-[0.25em] text-gray-500">
+              <div className="flex items-center justify-end gap-2 sm:gap-3 md:gap-4 text-[10px] sm:text-xs md:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] text-gray-500">
                 <span>My Projects</span>
-                <span className="h-px w-20 bg-gray-300"></span>
+                <span className="h-px w-12 sm:w-16 md:w-20 bg-gray-300"></span>
               </div>
             )}
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-4 sm:mt-5 md:mt-6 space-y-2 sm:space-y-3 md:space-y-4">
               {caseStudiesData.map((study, index) => {
                 const isActive = index === activeIndex;
 
@@ -245,8 +245,8 @@ function CaseStudies() {
                     onClick={() => handleTitleClick(index)}
                     onMouseEnter={() => !isExpanded && setActiveIndex(index)}
                     onFocus={() => !isExpanded && setActiveIndex(index)}
-                    className={`block w-full transition-colors duration-200 whitespace-nowrap ${
-                      isExpanded && isActive ? 'text-5xl md:text-5xl lg:text-7xl font-bold' : 'text-2xl md:text-3xl lg:text-5xl font-light'
+                    className={`block w-full transition-colors duration-200 whitespace-nowrap text-lg sm:text-2xl md:text-3xl lg:text-5xl ${
+                      isExpanded && isActive ? 'md:text-4xl lg:text-7xl font-bold' : 'font-light'
                     } ${
                       isActive
                         ? 'text-gray-900 cursor-default'
@@ -272,17 +272,17 @@ function CaseStudies() {
             <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-8"></div>
 
             {/* Description */}
-            <p className="text-gray-600 text-left pl-16 text-base leading-tight mb-8 px-6">
+            <p className="text-gray-600 text-left pl-6 sm:pl-10 md:pl-16 text-sm sm:text-base leading-tight mb-6 sm:mb-8 px-4 sm:px-6\">
               {activeStudy.description}
             </p>
 
             {/* Call to action */}
-            <p className="text-gray-500 text-left pl-16 text-sm mb-8 px-6">
+            <p className="text-gray-500 text-left pl-6 sm:pl-10 md:pl-16 text-xs sm:text-sm mb-6 sm:mb-8 px-4 sm:px-6\">
               Want to create something cool together? Let's do it!
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-4 justify-start  pl-16 px-6">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 justify-start pl-6 sm:pl-10 md:pl-16 px-4 sm:px-6\">
               <LinkButton
                 href={activeStudy.livePreviewUrl}
                 className="bg-gray-100 text-gray-900 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
@@ -291,7 +291,7 @@ function CaseStudies() {
               </LinkButton>
               <button
                 onClick={handleClose}
-                className="px-8 py-4 cursor-pointer bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center gap-2"
+                className="px-8 py-4 cursor-pointer text-black/60 rounded-xl font-medium transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <line x1="19" y1="12" x2="5" y2="12" />

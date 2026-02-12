@@ -73,17 +73,15 @@ function Navbar() {
     <div className="w-full flex items-center justify-center px-4 sm:mx-5">
       <RevealAnimation instant={true} direction="down" offset={-20}>
         <nav
-          className={`w-full fixed rounded-2xl lg:rounded-3xl text-white z-50 transition-all duration-700 ease-in-out ${
+          className={`w-[90%] md:w-full fixed rounded-full mx-3 lg:rounded-3xl text-white z-50 transition-all duration-700 ease-in-out ${
             scrolled
               ? "lg:w-[44rem] bg-black/10 dark:bg-white/10 top-3 backdrop-blur-md border border-white/20 shadow-2xl shadow-blue-500/10 before:absolute before:inset-0 before:rounded-2xl lg:before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:to-transparent"
               : "lg:w-[52rem] top-6 bg-transparent"
           }  before:pointer-events-none`}
         >
           <div className="max-w-7xl mx-auto px-4 py-3 lg:py-4 flex items-center justify-between relative">
-            <div className="flex items-center space-x-2 mr-auto">
-              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center font-bold text-sm lg:text-lg text-white shadow-lg shadow-blue-500/50 transition-transform hover:scale-110 duration-300">
-                VOL
-              </div>
+            <div className="flex items-center rounded-full overflow-hidden space-x-2 mr-auto">
+              <img src="../../../logo.jpeg" alt="Nexmove Solutions" className="h-8 md:h-10 lg:h-12 w-auto" />
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -92,9 +90,9 @@ function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className={`w-6 h-6 ${scrolled ? "text-white" : "text-black"}`} />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className={`w-6 h-6 ${scrolled ? "text-white" : "text-black"}`} />
               )}
             </button>
 
@@ -223,16 +221,16 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-              <div className="absolute top-full left-0 right-0 mt-2 mx-10 lg:hidden backdrop-blur-2xl bg-slate-900/95 rounded-2xl border border-white/20 shadow-2xl shadow-blue-500/10 overflow-hidden animate-in slide-in-from-top-2 duration-300 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/5 before:to-transparent before:pointer-events-none">
+              <div className="absolute top-full left-0 right-0 mt-2 mx-10 lg:hidden backdrop-blur-lg bg-black/30 rounded-2xl border border-white/20 shadow-2xl shadow-blue-500/10 overflow-hidden animate-in slide-in-from-top-2 duration-300 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/5 before:to-transparent before:pointer-events-none">
                 <div className="flex flex-col p-4 space-y-2 relative z-10">
                   <a
                     href="#"
-                    className="px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 rounded-xl transition-all duration-300"
+                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
                   >
                     Home
                   </a>
                   <details className="group">
-                    <summary className="px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none">
+                    <summary className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}>
                       Services
                     </summary>
                     <div className="pl-4 pt-2 space-y-2">
@@ -246,7 +244,7 @@ function Navbar() {
                             {section.items.map((item, itemIdx) => (
                               <li
                                 key={itemIdx}
-                                className="text-xs text-gray-400 hover:text-white hover:translate-x-1 cursor-pointer transition-all duration-300 py-1"
+                                className="text-xs text-gray-50 hover:text-white hover:translate-x-1 cursor-pointer transition-all duration-300 py-1"
                               >
                                 {item}
                               </li>
@@ -257,19 +255,19 @@ function Navbar() {
                     </div>
                   </details>
                   <details className="group">
-                    <summary className="px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none">
+                    <summary className={`px-4 py-3 text-sm ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"} hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none`}>
                       About Us
                     </summary>
                     <div className="pl-4 pt-2 space-y-2">
                       <a
                         href="#"
-                        className="block text-sm text-gray-400 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 transition-all duration-300 py-1"
+                        className="block text-sm text-gray-50 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 transition-all duration-300 py-1"
                       >
                         How we work
                       </a>
                       <a
                         href="#"
-                        className="block text-sm text-gray-400 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 transition-all duration-300 py-1"
+                        className="block text-sm text-gray-50 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 transition-all duration-300 py-1"
                       >
                         Contact Us
                       </a>
@@ -277,19 +275,19 @@ function Navbar() {
                   </details>
                   <a
                     href="#"
-                    className="px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 rounded-xl transition-all duration-300"
+                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
                   >
                     Clients
                   </a>
                   <a
                     href="#"
-                    className="px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 rounded-xl transition-all duration-300"
+                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
                   >
                     Contact Us
                   </a>
                   <a
                     href="#"
-                    className="px-4 py-3 text-sm text-white/90 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 rounded-xl transition-all duration-300"
+                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
                   >
                     Careers
                   </a>

@@ -109,7 +109,7 @@ const ExperienceSection = () => {
   }, [experienceCards.length]);
 
   return (
-    <section className="relative bg-transparent overflow-hidden flex items-center" style={{ minHeight: '710px' }}>
+    <section className="relative bg-transparent overflow-hidden flex items-center py-8 md:py-12 lg:py-16" style={{ minHeight: 'auto' }}>
       {/* Scrolling Container */}
       <div
         ref={scrollContainerRef}
@@ -117,7 +117,7 @@ const ExperienceSection = () => {
       >
           <div
             ref={contentRef}
-            className="flex gap-0.5 w-fit"
+            className="flex gap-2 sm:gap-3 md:gap-4 w-fit px-4 sm:px-6"
             style={{ willChange: 'transform' }}
           >
             {/* Original Cards */}
@@ -137,62 +137,51 @@ const ExperienceSection = () => {
 const ExperienceCard = ({ card }) => {
   return (
     <div
-      className="flex-shrink-0 w-[580px] h-[710px] overflow-hidden rounded-lg group transition-all duration-500 hover:shadow-2xl"
+      className="flex-shrink-0 w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] overflow-hidden rounded-2xl group cursor-pointer transition-all duration-500 hover:shadow-2xl"
       style={{
-        background: 'linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%)',
         border: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
-      {/* Image Section */}
-      <div className="relative h-[450px] overflow-hidden bg-black">
+      {/* Image Section - Full Container */}
+      <div className="relative w-full h-full overflow-hidden bg-black">
         <img
           src={card.image}
           alt={card.alt}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-75"
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
-        {/* Shine Effect on Hover */}
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-          style={{
-            background: 'linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%)',
-            transform: 'translateX(-100%)',
-          }}
-        />
-      </div>
-
-      {/* Content Section */}
-      <div className="p-8 h-[240px] flex flex-col justify-between relative">
-        {/* Number and Label */}
-        <div className="space-y-4">
-          <div className="flex items-baseline gap-3">
-            <div
-              className="text-6xl font-bold tracking-tighter"
-              style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #b8b8b8 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
+        
+        {/* Gradient Overlay - Always visible but changes on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500" />
+        
+        {/* Badge - Top Left */}
+        <div className="absolute top-4 sm:top-5 left-4 sm:left-5 z-20">
+          <div className="backdrop-blur-md bg-black/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl inline-flex items-center justify-center">
+            <span className="text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase">
               {card.number}
-            </div>
+            </span>
           </div>
-          <div className="text-xs font-semibold text-gray-400 tracking-widest leading-relaxed whitespace-pre-line">
-            {card.label}
-          </div>
-          <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">{card.description}</p>
         </div>
 
-        {/* Bottom Border Accent */}
-        <div
-          className="h-0.5 rounded-full transition-all duration-300"
-          style={{
-            background: 'linear-gradient(90deg, #ffffff 0%, transparent 100%)',
-            opacity: 0.5,
-          }}
-        />
+        {/* Content Overlay - Bottom section, visible on hover */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 transform transition-all duration-500 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+          <div className="space-y-2 sm:space-y-3">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-white leading-tight whitespace-pre-line">
+              {card.label}
+            </h3>
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed line-clamp-2 sm:line-clamp-3">
+              {card.description}
+            </p>
+          </div>
+          
+          {/* Bottom Border Accent */}
+          <div
+            className="h-0.5 rounded-full mt-3 sm:mt-4 transition-all duration-300"
+            style={{
+              background: 'linear-gradient(90deg, #ffffff 0%, transparent 100%)',
+              opacity: 0.7,
+            }}
+          />
+        </div>
       </div>
     </div>
   );

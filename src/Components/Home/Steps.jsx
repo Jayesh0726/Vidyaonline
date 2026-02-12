@@ -122,7 +122,7 @@ const Steps = () => {
 
           {/* cards  */}
           <RevealAnimation delay={0.2}>
-            <div className="space-y-8 lg:space-y-60">
+            <div className="space-y-1 lg:space-y-3 xl:space-y-18">
               {stepsData.map((step) => (
                 <StepCard
                   key={step.id}

@@ -72,11 +72,9 @@ function Footer() {
           {/* Brand Section */}
           <RevealAnimation delay={0.1}>
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center font-bold text-white text-sm">
-                  VOL
-                </div>
-                <h3 className="text-lg font-bold text-white">Vidya Online</h3>
+              <div className="flex  items-center gap-3 mb-6">
+                <img src="../../../logo.jpeg" alt="Nexmove Solutions" className="h-10 rounded-full overflow-hidden w-auto" />
+                <h3 className="text-lg font-bold text-white">Nexmove Solutions</h3>
               </div>
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                 Premier IT solutions for banking, government, and enterprise organizations.

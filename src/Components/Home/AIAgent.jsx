@@ -57,10 +57,10 @@ const AIAgent = () => {
 
     }, []);
   return (
-    <section className="pt-14 pb-14 md:pt-16 md:pb-16 lg:pt-[88px] lg:pb-[88px] xl:pt-[100px] xl:pb-[100px]">
+    <section className="pt-8 pb-8 sm:pt-12 sm:pb-12 md:pt-16 md:pb-16 w-full sm:w-[95%] md:w-[90%] lg:w-[85%] xl:w-full mx-auto lg:pt-[88px] lg:pb-[88px] xl:pt-[100px] xl:pb-[100px]">
       <RevealAnimation delay={0.1}>
         <div className="relative">
-          <div ref={boxRef} className="bg-black dark:bg-background-8 relative -z-0 mx-5 max-w-[1290px] overflow-hidden rounded-4xl py-16 text-center lg:py-28 xl:mx-auto 2xl:max-w-[1440px]">
+          <div ref={boxRef} className="bg-black dark:bg-background-8 relative -z-0 mx-4 sm:mx-5 max-w-[1290px] overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-4xl py-10 sm:py-16 md:py-20 lg:py-28 text-center lg:py-28 xl:mx-auto 2xl:max-w-[1440px]">
           {/* background image  */}
 
           <RevealAnimation delay={0.3} duration={2} useSpring={true} direction="right" offset={50}>
@@ -74,23 +74,23 @@ const AIAgent = () => {
           {/* Getting Started */}
 
           <RevealAnimation delay={0.3}>
-            <span className="badge badge-blur text-[8vw] md:text-[5vw] bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 uppercase mb-3.5 md:mb-5">How it works</span>
+            <span className="badge badge-blur text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[5vw] bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 uppercase mb-2 sm:mb-3 md:mb-4 lg:mb-5">How it works</span>
           </RevealAnimation>
 
           <RevealAnimation delay={0.4}>
-            <h2 className="mb-16 text-center font-normal text-white/40 max-[400px]:mx-auto max-[400px]:!max-w-[250px] max-md:mx-auto max-md:max-w-[300px] md:mb-[70px]">
+            <h2 className="mb-8 sm:mb-12 md:mb-16 lg:mb-[70px] text-center font-normal text-white/40 text-sm sm:text-base md:text-lg max-[400px]:mx-auto max-[400px]:!max-w-[250px] max-md:mx-auto max-md:max-w-[300px]">
               Refer to the easy installation manual.
             </h2>
           </RevealAnimation>
 
           {/* Content */}
-           <div className="mx-auto flex items-start justify-start gap-x-8 gap-y-10 max-[400px]:px-6 max-xl:px-8 max-md:flex-wrap max-md:items-center max-md:justify-center md:items-center md:justify-center">
+           <div className="mx-auto flex items-start justify-start gap-x-3 sm:gap-x-5 md:gap-x-7 lg:gap-x-8 gap-y-6 sm:gap-y-8 md:gap-y-10 max-[400px]:px-4 sm:px-5 max-xl:px-6 max-md:flex-wrap max-md:items-center max-md:justify-center md:items-center md:justify-center">
             {howItWorksData.map((step) => (
                  <RevealAnimation key={step.id} duration={0.5} delay={Number(step.delay)}>
                    <div data-card className="text-left">
-                  <span className={`${step.icon} text-[52px] text-white`} />
-                  <h3 className="text-heading-6 md:text-heading-5 mt-4 mb-2 font-normal text-white">{step.title}</h3>
-                  <p className="text-tagline-1 text-accent/60 max-w-[375px]">{step.description}</p>
+                  <span className={`${step.icon} text-[36px] sm:text-[44px] md:text-[48px] lg:text-[52px] text-white`} />
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-heading-5 mt-2 sm:mt-3 md:mt-4 mb-1.5 sm:mb-2 font-normal text-white">{step.title}</h3>
+                  <p className="text-xs sm:text-sm md:text-base lg:text-tagline-1 text-accent/60 max-w-[375px]">{step.description}</p>
                 </div>
               </RevealAnimation>
             ))}
