@@ -73,7 +73,7 @@ function Navbar() {
     <div className="w-full flex items-center justify-center px-2 sm:px-4">
       <RevealAnimation instant={true} direction="down" offset={-20}>
         <nav
-          className={`w-[87%] sm:w-[50%] md:w-full fixed rounded-full text-white z-50 transition-all duration-700 ease-in-out ${
+          className={`fixed rounded-full text-white z-50 transition-all duration-700 ease-in-out before:pointer-events-none ${
             scrolled
               ? "lg:w-[44rem] bg-black/10 dark:bg-white/10 top-3 backdrop-blur-md border border-white/20 shadow-2xl shadow-blue-500/10 before:absolute before:inset-0 before:rounded-2xl lg:before:rounded-2xl before:bg-gradient-to-br before:from-white/5 before:to-transparent"
               : "lg:w-[52rem] top-6 bg-transparent"
@@ -105,23 +105,15 @@ function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className={`px-4 py-2 text-sm hover:bg-[#F5F5F5] font-medium transition-all duration-500 rounded-lg relative group ${
-                      scrolled
-                        ? "text-white/90 hover:text-white"
-                        : "text-black/90 hover:text-black"
-                    }`}
-                  >
-                    <span className="relative z-10">Home</span>
+                    className='px-4 py-2 text-sm font-medium transition-all duration-500 rounded-lg relative group '>
+                    <span className="relative z-10 text-blue-950 dark:text-white">Home</span>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={`px-4 py-2 text-sm bg-transparent hover:bg-[#F5F5F5]  border-0 transition-all duration-500 rounded-lg ${
-                      scrolled
-                        ? "text-white/90 hover:text-white"
-                        : "text-black/90 hover:text-black"
-                    }`}
+                    className='px-4 py-2 text-sm bg-transparent hover:bg-[#F5F5F5] text-blue-950 dark:text-white  border-0 transition-all duration-500 rounded-lg'
+                      
                   >
                     Services
                   </NavigationMenuTrigger>
@@ -129,7 +121,7 @@ function Navbar() {
                     <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:p-8 mx-auto relative z-10">
                       {servicesData.map((section, idx) => (
                         <div key={idx} className="group">
-                          <h3 className="font-bold text-black mb-4 flex items-center">
+                          <h3 className="font-bold text-black dark:text-white mb-4 flex items-center">
                             <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mr-2 shadow-lg shadow-blue-500/50"></span>
 
                             {section.category}
@@ -138,7 +130,7 @@ function Navbar() {
                             {section.items.map((item, itemIdx) => (
                               <li
                                 key={itemIdx}
-                                className="hover:text-black hover:translate-x-1 cursor-pointer transition-all duration-300 hover:font-medium"
+                                className="hover:text-black dark:hover:text-white hover:translate-x-1 cursor-pointer transition-all duration-300 hover:font-medium"
                               >
                                 {item}
                               </li>
@@ -152,11 +144,7 @@ function Navbar() {
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={`px-4 py-2 text-sm bg-transparent hover:bg-white/10 border-0 transition-all duration-700 rounded-lg ${
-                      scrolled
-                        ? "text-white/90 hover:text-white"
-                        : "text-black/90 hover:text-black"
-                    }`}
+                    className='px-4 py-2 text-sm bg-transparent hover:bg-white/10 border-0 transition-all duration-700 rounded-lg text-blue-950 dark:text-white'
                   >
                     About Us
                   </NavigationMenuTrigger>
@@ -170,7 +158,7 @@ function Navbar() {
                         <li className="hover:text-black hover:translate-x-1 cursor-pointer font-medium transition-all duration-300">
                           How we work
                         </li>
-                        <li className="hover:text-black hover:translate-x-1 cursor-pointer font-medium transition-all duration-300">
+                        <li className="hover:text-black dark:hover:text-white hover:translate-x-1 cursor-pointer font-medium transition-all duration-300">
                           Contact Us
                         </li>
                       </ul>
@@ -181,11 +169,7 @@ function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className={`px-4 py-2 text-sm hover:bg-[#F5F5F5] font-medium transition-all duration-500 rounded-lg relative group ${
-                      scrolled
-                        ? "text-white/90 hover:text-white"
-                        : "text-black/90 hover:text-black"
-                    }`}
+                    className='px-4 py-2 text-sm  font-medium transition-all duration-500 rounded-lg relative group text-blue-950 dark:text-white'
                   >
                     <span className="relative z-10">Clients</span>
                   </NavigationMenuLink>
@@ -194,11 +178,7 @@ function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className={`px-4 py-2 text-sm hover:bg-[#F5F5F5] font-medium transition-all duration-500 rounded-lg relative group ${
-                      scrolled
-                        ? "text-white/90 hover:text-white"
-                        : "text-black/90 hover:text-black"
-                    }`}
+                    className='px-4 py-2 text-sm font-medium transition-all duration-500 rounded-lg relative group text-blue-950 dark:text-white'
                   >
                     <span className="relative z-10">Contact Us</span>
                   </NavigationMenuLink>
@@ -207,11 +187,7 @@ function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="#"
-                    className={`px-4 py-2 text-sm hover:bg-[#F5F5F5] font-medium transition-all duration-500 rounded-lg relative group ${
-                      scrolled
-                        ? "text-white/90 hover:text-white"
-                        : "text-black/90 hover:text-black"
-                    }`}
+                    className='px-4 py-2 text-sm font-medium transition-all duration-500 rounded-lg relative group text-blue-950 dark:text-white'
                   >
                     <span className="relative z-10">Careers</span>
                   </NavigationMenuLink>
@@ -221,30 +197,30 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-              <div className="absolute top-full left-0 right-0 mt-2 mx-10 lg:hidden backdrop-blur-lg bg-black/30 rounded-2xl border border-white/20 shadow-2xl shadow-blue-500/10 overflow-hidden animate-in slide-in-from-top-2 duration-300 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/5 before:to-transparent before:pointer-events-none">
+              <div className="absolute overflow-y-scroll top-full left-0 right-0 mt-2 mx-10 lg:hidden backdrop-blur-2xl bg-white/95 text-gray-800 dark:text-gray-900 rounded-2xl border border-gray-200/50 shadow-2xl shadow-blue-500/5 overflow-hidden animate-in slide-in-from-top-2 duration-300 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-blue-50/50 before:to-transparent  before:pointer-events-none">
                 <div className="flex flex-col p-4 space-y-2 relative z-10">
                   <a
                     href="#"
-                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
+                    className="px-4 py-3 text-sm text-gray-700 dark:text-gray-900 hover:text-black dark:hover:text-white hover:translate-x-1 rounded-xl transition-all duration-300"
                   >
                     Home
                   </a>
                   <details className="group">
-                    <summary className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}>
+                    <summary className="px-4 py-3 text-sm text-gray-700 dark:text-gray-900 hover:text-black dark:hover:text-white hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none">
                       Services
                     </summary>
-                    <div className="pl-4 pt-2 space-y-2">
+                    <div className="pl-4 pt-2 space-y-2 max-h-60 overflow-y-auto pr-2">
                       {servicesData.map((section, idx) => (
                         <div key={idx} className="mb-4">
-                          <h4 className="font-bold text-xs text-gray-300 mb-2 flex items-center">
-                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-red-500 to-pink-500 rounded-full mr-2 shadow-md shadow-red-500/50"></span>
+                          <h4 className="font-bold text-xs text-gray-500 dark:text-gray-700 mb-2 flex items-center">
+                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mr-2 shadow-md shadow-blue-500/50"></span>
                             {section.category}
                           </h4>
                           <ul className="space-y-1">
                             {section.items.map((item, itemIdx) => (
                               <li
                                 key={itemIdx}
-                                className="text-xs text-gray-50 hover:text-white hover:translate-x-1 cursor-pointer transition-all duration-300 py-1"
+                                className="text-xs text-gray-600 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 cursor-pointer transition-all duration-300 py-1"
                               >
                                 {item}
                               </li>
@@ -255,19 +231,19 @@ function Navbar() {
                     </div>
                   </details>
                   <details className="group">
-                    <summary className={`px-4 py-3 text-sm ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"} hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none`}>
+                    <summary className="px-4 py-3 text-sm text-gray-700 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 rounded-xl transition-all duration-300 cursor-pointer list-none">
                       About Us
                     </summary>
                     <div className="pl-4 pt-2 space-y-2">
                       <a
                         href="#"
-                        className="block text-sm text-gray-50 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 transition-all duration-300 py-1"
+                        className="block text-sm text-gray-600 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 transition-all duration-300 py-1"
                       >
                         How we work
                       </a>
                       <a
                         href="#"
-                        className="block text-sm text-gray-50 hover:text-white hover:bg-[#F5F5F5] hover:translate-x-1 transition-all duration-300 py-1"
+                        className="block text-sm text-gray-600 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 transition-all duration-300 py-1"
                       >
                         Contact Us
                       </a>
@@ -275,19 +251,19 @@ function Navbar() {
                   </details>
                   <a
                     href="#"
-                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
+                    className="px-4 py-3 text-sm text-gray-700 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 rounded-xl transition-all duration-300"
                   >
                     Clients
                   </a>
                   <a
                     href="#"
-                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
+                    className="px-4 py-3 text-sm text-gray-700 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 rounded-xl transition-all duration-300"
                   >
                     Contact Us
                   </a>
                   <a
                     href="#"
-                    className={`px-4 py-3 text-sm hover:translate-x-1 rounded-xl transition-all duration-300 ${scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-white"}`}
+                    className="px-4 py-3 text-sm text-gray-700 dark:text-gray-900 hover:text-black dark:hover:text-black hover:translate-x-1 rounded-xl transition-all duration-300"
                   >
                     Careers
                   </a>

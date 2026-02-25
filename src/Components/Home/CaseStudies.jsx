@@ -263,7 +263,7 @@ function CaseStudies() {
           ? 'h-[80vh] sm:h-[70vh] md:h-[102vh]' 
           : 'h-[55vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]'
       }`}>
-        <div className="main-container relative min-h-screen md:min-h-[120vh] lg:min-h-[130vh] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-20 lg:py-20">
+        <div className="main-container relative min-h-screen md:min-h-[120vh] lg:min-h-[130vh] py-8 sm:py-12 md:py-0 px-4 sm:px-6 md:px-20">
         <div className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[640px] lg:min-h-[640px]">
           {/* Image Section */}
           <div
