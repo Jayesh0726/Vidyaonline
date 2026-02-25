@@ -75,9 +75,9 @@ function Navbar() {
         <nav
           className={`fixed rounded-full text-white z-50 transition-all duration-700 ease-in-out before:pointer-events-none ${
             scrolled
-              ? "w-[75%] sm:w-[60%] md:w-[85%] lg:w-[44rem] bg-black/10 dark:bg-white/10 top-3 backdrop-blur-md border border-white/20 shadow-2xl shadow-blue-500/10 before:absolute before:inset-0 before:rounded-2xl lg:before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:to-transparent"
-              : "w-[87%] sm:w-[50%] md:w-full lg:w-[52rem] top-6 bg-transparent"
-          }`}
+              ? "lg:w-[44rem] bg-black/10 dark:bg-white/10 top-3 backdrop-blur-md border border-white/20 shadow-2xl shadow-blue-500/10 before:absolute before:inset-0 before:rounded-2xl lg:before:rounded-2xl before:bg-gradient-to-br before:from-white/5 before:to-transparent"
+              : "lg:w-[52rem] top-6 bg-transparent"
+          }  before:pointer-events-none`}
         >
           <div className="max-w-7xl mx-auto px-4 py-3 lg:py-4 flex items-center justify-between relative">
             <div className="flex items-center rounded-full overflow-hidden space-x-2 mr-auto">
@@ -117,7 +117,7 @@ function Navbar() {
                   >
                     Services
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className={`${scrolled ? "w-[min(100vw,56rem)] min-w-[22rem] sm:min-w-[40rem] md:min-w-[45rem]" : "w-[min(100vw,30rem)] min-w-[22rem] sm:min-w-[40rem] md:min-w-[42rem]"}  max-w-none right-96 backdrop-blur-2xl bg-white/95 text-gray-800 dark:text-gray-50 rounded-3xl border border-gray-200/50 shadow-2xl shadow-blue-500/5 before:absolute before:inset-0 before:rounded-sm before:bg-gradient-to-br before:from-blue-100/50 before:to-transparent dark:before:bg-gradient-to-br dark:before:from-blue-950/50 dark:before:to-transparent before:pointer-events-none transition-all duration-700`}>
+                  <NavigationMenuContent className="w-[min(100vw,72rem)] min-w-[22rem] sm:min-w-[40rem] lg:min-w-[51rem] max-w-none right-96 backdrop-blur-2xl bg-white/95 text-gray-800 dark:text-gray-50 rounded-md border border-gray-200/50 shadow-2xl shadow-blue-500/5 before:absolute before:inset-0 before:rounded-md before:bg-gradient-to-br before:from-blue-50/50 before:to-transparent before:dark:text-gray-50 before:pointer-events-none">
                     <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:p-8 mx-auto relative z-10">
                       {servicesData.map((section, idx) => (
                         <div key={idx} className="group">
@@ -148,14 +148,14 @@ function Navbar() {
                   >
                     About Us
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="backdrop-blur-2xl bg-white/95 text-gray-800 rounded-2xl border border-gray-200/50 shadow-2xl dark:before:bg-gradient-to-br dark:before:from-blue-950/50 dark:before:to-transparent shadow-blue-500/5 before:absolute before:inset-0 before:rounded-sm before:bg-gradient-to-br before:from-blue-50/50 before:to-transparent before:pointer-events-none">
-                    <div className="p-6 min-w-64 relative  z-10">
-                      <h3 className="font-bold text-black text-white mb-4 flex items-center">
+                  <NavigationMenuContent className="backdrop-blur-2xl bg-white/95 text-gray-800 dark:text-gray-50 rounded-md border border-gray-200/50 shadow-2xl shadow-blue-500/5 before:absolute before:inset-0 before:rounded-md before:bg-gradient-to-br before:from-blue-50/50 before:to-transparent before:dark:text-gray-50 before:pointer-events-none">
+                    <div className="p-6 min-w-64 relative z-10">
+                      <h3 className="font-bold text-black mb-4 flex items-center">
                         <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mr-2 shadow-lg shadow-blue-500/50"></span>
                         ABOUT US
                       </h3>
-                      <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-50">
-                        <li className="hover:text-black dark:hover:text-white hover:translate-x-1 cursor-pointer font-medium transition-all duration-300">
+                      <ul className="space-y-3 text-sm text-gray-50">
+                        <li className="hover:text-black hover:translate-x-1 cursor-pointer font-medium transition-all duration-300">
                           How we work
                         </li>
                         <li className="hover:text-black dark:hover:text-white hover:translate-x-1 cursor-pointer font-medium transition-all duration-300">
