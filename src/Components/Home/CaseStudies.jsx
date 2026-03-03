@@ -306,10 +306,18 @@ function CaseStudies() {
                   setIsImageReady(true);
                 }}
               />
+
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/10"></div>
             </div>
+                                     
             {!isExpanded && (
               <div className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 rounded-full bg-blue-300/30 blur-2xl"></div>
+            )}
+
+             {!isExpanded && (
+              <p className="mt-2 mb-2 text-[11px] sm:text-xs xl:text-lg text-gray-500/50 absolute -bottom-[120%] text-right pl-1.5">
+                                          Explore the stories behind our work — click any project title to dive in.
+              </p>
             )}
           </div>
 
@@ -328,6 +336,8 @@ function CaseStudies() {
             </span>               
               </div>
             )}
+
+
 
             <div className="mt-4 sm:mt-5 md:mt-6 px-1 space-y-1 sm:space-y-1 md:space-y-2">
               {caseStudiesData.map((study, index) => {

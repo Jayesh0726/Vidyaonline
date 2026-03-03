@@ -110,7 +110,7 @@ function FAQ() {
           {/* Contact Form - Right Side */}
           <div className="px-4 sm:px-6 md:px-8 lg:mx-18 lg:sticky lg:top-24 lg:h-fit">
             <RevealAnimation delay={0.3}>
-              <div className="rounded-2xl sm:rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-950/50 to-slate-900/50 p-4 sm:p-6 md:p-8 backdrop-blur-xl">
+              <div className="rounded-2xl sm:rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-950/50 to-slate-900/50 p-1 sm:p-2 md:p-3 xl:p-4 backdrop-blur-xl">
                 {/* Form Header */}
                 <RevealAnimation delay={0.4}>
                   <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-3">
@@ -256,7 +256,7 @@ function FAQ() {
                         })}
                         type="text"
                         placeholder=" "
-                        className="w-12 sm:w-16 bg-transparent border-2 border-blue-400/50 rounded-lg px-2 sm:px-3 py-2 sm:py-4 text-white text-xs sm:text-sm text-center focus:border-blue-400 focus:outline-none transition-colors"
+                        className="w-12 sm:w-16 bg-transparent border-2 border-blue-400/50 rounded-lg px-2 sm:px-3 py-0.5 sm:py-1 text-white text-xs sm:text-sm text-center focus:border-blue-400 focus:outline-none transition-colors"
                       />
                       {errors.captcha && (
                         <p className="text-red-400 text-[10px] sm:text-xs">{errors.captcha.message}</p>

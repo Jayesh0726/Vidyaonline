@@ -86,10 +86,20 @@ export class StackCards {
       if (isNaN(this.marginY)) {
         item.style.transform = 'none';
       } else {
-        // Set initial transform for stacking
-        item.style.transform = 'translateY(' + this.marginY * i + 'px)';
+        const baseScale = this.getDepthScale(i);
+        item.style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + baseScale + ')';
       }
     }
+  }
+
+  getDepthScale(index) {
+    const depthStep = 0.025;
+    const offset = (this.items.length - 1 - index) * depthStep;
+    return this.clampScale(1 - offset);
+  }
+
+  clampScale(value) {
+    return Math.max(0.72, Math.min(1, value));
   }
 
   getIntegerFromProperty(property) {
@@ -125,14 +135,17 @@ export class StackCards {
     }
 
     for (let i = 0; i < this.items.length; i++) {
-      // use only scale
+      // Use depth scale so each next card appears slightly larger in the stack
       const scrolling = this.cardTop - top - i * (this.cardHeight + this.marginY);
+      const depthOffset = (this.items.length - 1 - i) * 0.025;
+
       if (scrolling > 0) {
-        const scaling = i === this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.05) / this.cardHeight;
+        const baseScrollScale = i === this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.05) / this.cardHeight;
+        const scaling = this.clampScale(baseScrollScale - depthOffset);
         this.items[i].style.transform =
           'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
       } else {
-        this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px)';
+        this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + this.getDepthScale(i) + ')';
       }
     }
 

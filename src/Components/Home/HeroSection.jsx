@@ -16,7 +16,7 @@ function HeroSection() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowSpline(entry.isIntersecting && entry.intersectionRatio >= 0.35)
+        setShowSpline(entry.isIntersecting && entry.intersectionRatio >= 0.01)
       },
       { threshold: [0, 0.35, 1], rootMargin: '0px' }
     )
