@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
+import SpotLight from '../ui/SpotLight';
 
 const caseStudiesData = [
   {
@@ -207,8 +208,19 @@ function CaseStudies() {
   if (isMobile) {
     return (
       <RevealAnimation>
-        <section className="relative overflow-hidden">
-          <div className="main-container py-10 px-4 sm:px-6 space-y-6">
+        <section className="relative  overflow-hidden">
+          <SpotLight
+            bgcolor="bg-blue-500/20 dark:bg-blue-500/10"
+            height="h-48 sm:h-64"
+            width="w-48 sm:w-64"
+            blur="blur-3xl"
+            top="top-0"
+            right="right-0"
+            translateX="translate-x-1/3"
+            translateY="-translate-y-1/3"
+            className="pointer-events-none"
+          />
+          <div className="main-container relative z-10 py-10 px-4  sm:px-6 space-y-6">
             {caseStudiesData.map((study) => (
               <div
                 key={study.id}
@@ -258,12 +270,21 @@ function CaseStudies() {
 
   return (
     <RevealAnimation>
-      <section className={`relative transition-all duration-500 ease-in-out ${
+      <section className={`relative transition-all duration-500 ease-in-out xl:mt-32 ${
         isExpanded 
-          ? 'h-[80vh] sm:h-[70vh] md:h-[130vh]' 
-          : 'h-[75vh] sm:h-[60vh] md:h-[100vh] lg:h-[100vh]'
+          ? 'h-[80vh] sm:h-[70vh] md:h-[130vh] xl:h-[100vh]' 
+          : 'h-[75vh] sm:h-[60vh] md:h-[100vh] lg:h-[100vh] xl:h-[70vh]'
       }`}>
-        <div className="main-container relative min-h-screen md:min-h-[85vh] lg:min-h-[120vh] py-8 sm:py-12 md:py-0 px-4 sm:px-6 md:px-10">
+        {/* <SpotLight
+          bgcolor="bg-blue-400 dark:bg-blue-400/10"
+          height="h-64 md:h-80 lg:h-96 xl:h-[32rem]"
+          width="w-64 md:w-80 lg:w-96 xl:w-[32rem]"
+          blur="blur-[180px]"
+          top="top-0"
+          right="right-[-10%]"
+          className="pointer-events-none"
+        /> */}
+        <div className="main-container relative z-10 min-h-screen md:min-h-[85vh] lg:min-h-[120vh] py-8 sm:py-12 md:py-0 px-4 sm:px-6 md:px-10">
         <div className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[640px]">
           {/* Image Section */}
           <div

@@ -53,18 +53,18 @@ function HeroSection() {
       </div>
       {/* Subtle Background Pattern */}
 
-      <div className="container mx-auto max-w-7xl px-0 sm:px-4 relative z-10">
+      <div className="container mx-auto max-w-7xl px-0 sm:px-4 relative xl:mt-28 z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Content */}
       <SpotLight bgcolor={"bg-blue-500/80"} height={"h-64"} width={"w-64"} blur={"blur-[150px]"} left={"left-[120%]"} top={"top-[50%]"} translateX={"translate-x-[-50%]"} translateY={"translate-y-[-50%]"}/>
           <div className="space-y-8">
             {/* Badge */}
-            <RevealAnimation direction="down" delay={0.2}>
+            {/* <RevealAnimation direction="down" delay={0.2}>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-950 rounded-full border border-blue-100 dark:border-blue-900">
                 <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
                 <span className="text-sm font-medium text-blue-700 uppercase dark:text-blue-300">Premier IT Solutions Provider</span>
               </div>
-            </RevealAnimation>
+            </RevealAnimation> */}
 
             {/* Main Heading */}
             <RevealAnimation direction="up" delay={0.4} offset={100}>

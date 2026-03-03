@@ -110,7 +110,7 @@ const ExperienceSection = () => {
 
   return (
     <section className="relative overflow-hidden mt-10 md:mt-24 pt-14 flex flex-col items-center gap-6 py-8 md:py-12 lg:py-16">
-      <span className="flex items-center justify-center gap-1 w-56 absolute  left-1/2 -translate-x-1/2 top-2 lg:top-40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-50 dark:bg-blue-950 text-xs font-semibold text-blue-700 dark:text-blue-200 tracking-widest uppercase border border-blue-200 dark:border-amber-900">
+      <span className="flex items-center justify-center gap-1 w-56 absolute  left-1/2 -translate-x-1/2 top-2 lg:top-8 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-50 dark:bg-blue-950 text-xs font-semibold text-blue-700 dark:text-blue-200 tracking-widest uppercase border border-blue-200 dark:border-amber-900">
                 <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
         
         Experience Highlights
@@ -140,6 +140,10 @@ const ExperienceSection = () => {
 };
 
 const ExperienceCard = ({ card }) => {
+  const unitMatch = card.number.match(/([+%])$/);
+  const unit = unitMatch ? unitMatch[1] : '';
+  const baseNumber = unit ? card.number.slice(0, -1) : card.number;
+
   return (
     <div
       className="flex-shrink-0 w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] overflow-hidden rounded-2xl group cursor-pointer transition-all duration-500 hover:shadow-2xl"
@@ -160,9 +164,14 @@ const ExperienceCard = ({ card }) => {
         
         {/* Badge - Top Left */}
         <div className="absolute top-4 sm:top-5 left-4 sm:left-5 z-20">
-          <div className="backdrop-blur-md bg-black/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl inline-flex items-center justify-center">
-            <span className="text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase">
-              {card.number}
+          <div className="backdrop-blur-md bg-black/10 px-3 sm:px-3 py-1.5 sm:py-2 lg:py-5 rounded-2xl inline-flex items-center justify-center">
+            <span className="inline-flex items-start text-white text-[10px] tracking-tighter sm:text-3xl md:text-5xl lg:text-7xl font-bold leading-none">
+              {baseNumber}
+              {unit && (
+                <span className="ml-0.5 -translate-y-0.5 text-[7px] sm:text-[8px] md:text-base lg:text-lg leading-none">
+                  {unit}
+                </span>
+              )}
             </span>
           </div>
         </div>

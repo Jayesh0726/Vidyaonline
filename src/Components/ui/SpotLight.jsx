@@ -7,10 +7,12 @@ import React, { useId } from 'react'
  * @property {string} [width]
  * @property {string} [blur]
  * @property {string} [left]
+ * @property {string} [right]
  * @property {string} [top]
  * @property {string} [translateX]
  * @property {string} [translateY]
  * @property {string} [rotateX]
+ * @property {string} [className]
  */
 
 /**
@@ -23,17 +25,19 @@ const SpotLight = React.forwardRef(function spotLight({
   width = "",
   blur = "",
   left = "",
+  right = "",
   top = "",
   translateX = "",
   translateY = "",
   rotateX = "",
+  className = "",
   ...props
 }, ref) {
   const id = useId();
   return (
     <div 
       id={id} 
-      className={`overflow-x-hidden rounded-full absolute ${rotateX} ${bgcolor} ${height} ${width} ${blur} ${left} ${top} ${translateX} ${translateY}`} 
+      className={`overflow-x-hidden rounded-full absolute ${rotateX} ${bgcolor} ${height} ${width} ${blur} ${left} ${right} ${top} ${translateX} ${translateY} ${className}`} 
       {...props}
       ref={ref}
     />

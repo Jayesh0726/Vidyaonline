@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Coins, WalletCards, TrendingUp } from 'lucide-react';
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -13,21 +14,21 @@ if (typeof window !== 'undefined') {
 const howItWorksData = [
   {
     id: 1,
-    icon: 'ns-shape-3',
+    icon: Coins,
     title: 'Cryptocurrency marketplace',
     description: 'A cryptocurrency marketplace is a digital platform where users can buy',
     delay: '0.5',
   },
   {
     id: 2,
-    icon: 'ns-shape-5',
+    icon: WalletCards,
     title: 'Buy digital currency',
     description: 'Buying digital currency has become an increasingly popular way for individuals and',
     delay: '0.6',
   },
   {
     id: 3,
-    icon: 'ns-shape-35',
+    icon: TrendingUp,
     title: 'Generate income',
     description: 'Generating income is the process of earning money through various means such as',
     delay: '0.7',
@@ -85,15 +86,18 @@ const AIAgent = () => {
 
           {/* Content */}
            <div className="mx-auto flex items-start justify-start gap-x-3 sm:gap-x-5 md:gap-x-7 lg:gap-x-8 gap-y-6 sm:gap-y-8 md:gap-y-10 px-2 sm:px-5 md:px-8 max-md:flex-wrap max-md:items-center max-md:justify-center md:items-center md:justify-center">
-            {howItWorksData.map((step) => (
+            {howItWorksData.map((step) => {
+              const Icon = step.icon;
+              return (
                  <RevealAnimation key={step.id} duration={0.5} delay={Number(step.delay)}>
                    <div data-card className="text-left">
-                  <span className={`${step.icon} text-[36px] sm:text-[44px] md:text-[48px] lg:text-[52px] text-white`} />
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" strokeWidth={1} />
                   <h3 className="text-sm sm:text-base md:text-lg lg:text-heading-5 mt-2 sm:mt-3 md:mt-4 mb-1.5 sm:mb-2 font-normal text-white">{step.title}</h3>
                   <p className="text-xs sm:text-sm md:text-base lg:text-tagline-1 text-accent/60 max-w-[375px]">{step.description}</p>
                 </div>
               </RevealAnimation>
-            ))}
+              );
+            })}
           </div>
           </div>
         </div>

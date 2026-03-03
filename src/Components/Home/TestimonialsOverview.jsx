@@ -2,6 +2,7 @@ import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 import StackCardItem from '../ui/stack-card/StackCardItem';
 import StackCardWrapper from '../ui/stack-card/StackCardWrapper';
+import { BriefcaseBusiness, MonitorCog, HeartPulse, Landmark, GraduationCap } from 'lucide-react';
 
 const testimonialsData = [
   {
@@ -9,7 +10,7 @@ const testimonialsData = [
     name: 'Sarah Johnson',
     role: 'CEO',
     company: 'TechStart Inc.',
-    avatar: '👩‍💼',
+    avatarIcon: BriefcaseBusiness,
     testimonial: 'Working with this team transformed our business. They delivered a stunning mobile app that exceeded our expectations and helped us reach 100K+ users in just 3 months.',
     rating: 5,
   },
@@ -18,7 +19,7 @@ const testimonialsData = [
     name: 'Michael Chen',
     role: 'Product Manager',
     company: 'InnovateCo',
-    avatar: '👨‍💻',
+    avatarIcon: MonitorCog,
     testimonial: 'Their expertise in UI/UX design is unmatched. Our user engagement increased by 200% after the redesign. Highly recommend their services!',
     rating: 5,
   },
@@ -27,7 +28,7 @@ const testimonialsData = [
     name: 'Emily Rodriguez',
     role: 'Founder',
     company: 'HealthTech Solutions',
-    avatar: '👩‍⚕️',
+    avatarIcon: HeartPulse,
     testimonial: 'From MVP to full launch, they guided us every step of the way. Their technical knowledge and dedication to our success made all the difference.',
     rating: 5,
   },
@@ -36,7 +37,7 @@ const testimonialsData = [
     name: 'David Park',
     role: 'CTO',
     company: 'FinanceFlow',
-    avatar: '👨‍💼',
+    avatarIcon: Landmark,
     testimonial: 'Exceptional quality and attention to detail. They built a scalable web application that handles millions of transactions daily without any issues.',
     rating: 5,
   },
@@ -45,7 +46,7 @@ const testimonialsData = [
     name: 'Lisa Anderson',
     role: 'Marketing Director',
     company: 'EduLearn',
-    avatar: '👩‍🎓',
+    avatarIcon: GraduationCap,
     testimonial: 'Their ongoing support and maintenance services are top-notch. They respond quickly and always go above and beyond to ensure everything runs smoothly.',
     rating: 5,
   },
@@ -63,9 +64,11 @@ const TestimonialsOverview = () => {
                 gap="24px"
                 initDelay={100}
                 className="mx-auto px-4 sm:px-6 w-full max-w-sm sm:max-w-md md:max-w-lg lg:mx-0 lg:max-w-full lg:flex-1">
-                {testimonialsData.map((testimonial) => (
+                {testimonialsData.map((testimonial) => {
+                  const AvatarIcon = testimonial.avatarIcon;
+                  return (
                   <StackCardItem key={testimonial.id}>
-                    <div className="flex h-full flex-col items-start space-y-6 bg-black/60 rounded-2xl backdrop-blur-md dark:bg-black/80 p-8 shadow-sm border border-white/20 hover:shadow-lg transition-shadow duration-300">
+                    <div className="flex h-full flex-col w-auto  items-start space-y-6 bg-black/60 rounded-2xl backdrop-blur-md dark:bg-black/80 p-8 shadow-sm border border-white/20 hover:shadow-lg transition-shadow duration-300">
                       <div className="flex items-center gap-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <span key={i} className="text-yellow-400 text-lg">★</span>
@@ -75,8 +78,8 @@ const TestimonialsOverview = () => {
                         "{testimonial.testimonial}"
                       </p>
                       <div className="flex items-center gap-4 pt-2">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-2xl">
-                          {testimonial.avatar}
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400/10 to-blue-500/10 flex items-center justify-center">
+                          <AvatarIcon className="w-6 h-6 text-purple-200 dark:text-blue-300" />
                         </div>
                         <div>
                           <h3 className="text-base font-semibold text-white">{testimonial.name}</h3>
@@ -87,7 +90,8 @@ const TestimonialsOverview = () => {
                       </div>
                     </div>
                   </StackCardItem>
-                ))}
+                  );
+                })}
               </StackCardWrapper>
               <div className="w-full lg:sticky lg:top-32 space-y-10 lg:flex-1 flex flex-col items-start lg:items-end">
                 <RevealAnimation delay={0.3}>
