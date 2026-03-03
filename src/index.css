@@ -180,6 +180,20 @@ body{
   width: auto;
 }
 
+/* Hide scrollbars globally while preserving scroll behavior */
+html,
+body,
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
 /* Footer Animations */
 @keyframes footerLeft {
   from {

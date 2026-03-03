@@ -146,7 +146,7 @@ const ExperienceCard = ({ card }) => {
 
   return (
     <div
-      className="flex-shrink-0 w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] overflow-hidden rounded-2xl group cursor-pointer transition-all duration-500 hover:shadow-2xl"
+      className="flex-shrink-0 w-[280px] h-[350px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] xl:w-[480px] xl:h-[550px] overflow-hidden rounded-2xl group cursor-pointer transition-all duration-500 hover:shadow-2xl"
       style={{
         border: '1px solid rgba(255, 255, 255, 0.08)',
       }}
